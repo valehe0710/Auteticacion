@@ -1,65 +1,68 @@
 package Autenticacio;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.Label;
-import java.awt.Toolkit;
 
-import javax.swing.ButtonGroup;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JRadioButton;
-import javax.swing.JSlider;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
 import javax.swing.JTabbedPane;
-import javax.swing.JTextField;
-import javax.swing.border.Border;
-import javax.swing.border.TitledBorder;
+
+
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
 		MyFrame frame = new MyFrame();
-		frame.setVisible(true);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
-
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
 }
 
-class MyFrame extends JFrame{
-	public MyFrame() {
+class MyFrame extends JFrame {
+    public MyFrame() {
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Dimension screenSize = toolkit.getScreenSize();
+        int screenWidth = screenSize.width;
+        int screenHeight = screenSize.height;
 
-		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		Dimension screenSize = toolkit.getScreenSize();
-		int screenWidth = screenSize.width;
-		int screenHeight = screenSize.height;
-		
-		
-		setTitle("Registro");
-		setBounds(screenWidth / 2, screenHeight / 2, 500, 700);
-		setLocationRelativeTo(null);
-		setResizable(false);
-		
-		
-		JTabbedPane compExample= new JTabbedPane();
-		Registro registro = new Registro();
-		EjemploComboBox comboBoxExample = new EjemploComboBox();
-		EjemploSlider sliderExample = new EjemploSlider();
-		EjemploRadioButton radioExample = new EjemploRadioButton();
-		
-		
-		compExample.addTab("Registro", registro);
-		compExample.addTab("ComboBox", comboBoxExample);
-		compExample.addTab("RadioButton", radioExample);
-		compExample.addTab("Slider", sliderExample);
-		
-		add(compExample);
+        setTitle("Sistema Administrativo");
+        setBounds(screenWidth / 2, screenHeight / 2, 500, 700);
+        setLocationRelativeTo(null);
+        setResizable(true);
+
+        JTabbedPane tabbedPane = new JTabbedPane();
+        Registro registroPanel = new Registro();
+        Login loginPanel = new Login();
+        CambiarPassword cambiarPasswordPanel = new CambiarPassword();
+        Menu menu = new Menu();
+        
+        
+        //operaciones
+        JMenuBar mb=new JMenuBar();
+        setJMenuBar(mb);
+        
+        JMenu menu1=new JMenu("OPTIONS");
+        mb.add(menu1);
+        
+        JMenu mi1 = new JMenu("Archivo");
+        menu1.add(mi1);
+        JMenuItem mi2 = new JMenu("Ayuda");
+        menu1.add(mi2);
+        
+        JMenuItem mi3 = new JMenuItem("Ayuda");
+        mi2.add(mi3);
+        JMenuItem mi4 =new JMenuItem("Salir");
+        mi1.add(mi4);
+        
+        //
+        tabbedPane.addTab("Registro", registroPanel);
+        tabbedPane.addTab("Login", loginPanel);
+        tabbedPane.addTab("Cambiar Contraseña", cambiarPasswordPanel);
+        tabbedPane.addTab("Menu", menu);
+
+        add(tabbedPane);
 	}
 }
 
