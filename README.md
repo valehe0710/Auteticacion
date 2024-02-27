@@ -1,6 +1,5 @@
-
-##Actualizacion
-###Aqui esta la actualizacion de lo que fue el proyecto de Autenticacio al nuevo proyecto de SISTEMA ADMINISTRATIVO.
+Actualizacion
+-> Aqui esta la actualizacion de lo que fue el proyecto de Autenticacio al nuevo proyecto de SISTEMA ADMINISTRATIVO.
 
 ![login](https://github.com/valehe0710/Auteticacion/assets/159468550/b25f1cd9-3235-4150-b0d6-12597b474986)
 ![login2](https://github.com/valehe0710/Auteticacion/assets/159468550/6ecb7814-b546-424d-843d-f4103bb767f8)
