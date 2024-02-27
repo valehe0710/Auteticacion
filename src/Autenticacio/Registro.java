@@ -20,7 +20,7 @@ setLayout(null);
 		titulo.setBounds(150, 90, 200, 50);
 		add(titulo);
 		
-		JLabel usuarioLbl = new JLabel("Usuario");
+		JLabel usuarioLbl = new JLabel("Usuario:");
 		usuarioLbl.setFont(new Font("Arial", Font.PLAIN, 13));
 		usuarioLbl.setBounds(150, 140, 200, 50);
 		add(usuarioLbl);
